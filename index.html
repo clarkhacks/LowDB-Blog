@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Json Micro Blog</title>
+    <link href="https://cdn.rawgit.com/zachacole/Simple-Grid/0de58d47/simple-grid.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://clarkhacks.com/favicon.png">
+    <style>
+        #feed {
+            margin: 50px auto;
+            max-width: 400px;
+            width: auto;
+        }
+        
+        .about {
+            background-color: #000;
+            border-radius: 4px;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .button {
+            background-color: #000;
+            border-radius: 4px;
+            color: #fff;
+            margin-bottom: 3px;
+            margin-top: 2px;
+            padding: 8px;
+        }
+        
+        .name {
+            color: #fff;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: -15px;
+        }
+        
+        .post {
+            background: #fff;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+            color: #1a1c21;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            width: 100%;
+        }
+        
+        .post .card {
+            overflow: visible;
+        }
+        
+        .post .card .bottom {
+            margin-top: 15px;
+        }
+        
+        .post .card .top {
+            min-height: 20px;
+        }
+        
+        .post .card .top .date {
+            color: #8b99a0;
+            float: right;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .post .card .top .user {
+            color: #1a1c21;
+            font-weight: 700;
+        }
+        
+        .post .content {
+            padding: 15px;
+        }
+        
+        .post .media {
+            border: 0;
+            height: auto;
+            margin-top: 5px;
+            min-height: 200px;
+            vertical-align: middle;
+            width: 100%;
+        }
+        
+        .profile {
+            background-attachment: fixed;
+            background-image: url(https://goo.gl/yEuCmX);
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .user-image {
+            border-radius: 50%;
+        }
+        
+        a {
+            color: #08c;
+            outline: 0;
+            text-decoration: none;
+        }
+        
+        a:hover,
+        a:focus {
+            color: #005580;
+        }
+        
+        body {
+            font-family: "PT Sans";
+            font-size: 14px;
+            height: 100%;
+            line-height: 1.5;
+        }
+        
+        html {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="feed"></div>
+    <div class="container">
+        <div class="profile">
+            <div class="row">
+                <div class="col-3"><img class="user-image" src="https://goo.gl/6b4Jif" alt="profile image" id="userPhoto" /></div>
+                <div class="col-9">
+                    <div class="name" id="userName">Loading...</div>
+                    <p class="about" id="bio">Loading...</p><a class="button" href="#" id="socialLink">Loading...</a>
+                </div>
+            </div>
+        </div>
+        <div id="post-wrapper"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var displayResources = $("#post-wrapper");
+            var bio = $("#bio");
+            var userName = $("#userName");
+            var userPhoto = $("#userPhoto");
+            var socialLink = $("#socialLink");
+            displayResources.text("Loading...");
+
+            $.ajax({
+                type: "GET",
+                url: "https://clarkwtest.firebaseio.com/.json",
+                success: function(result) {
+                    console.log(result);
+                    var output = "";
+                    for (var i in result.posts) {
+                        output +=
+                            '<div class="post"> <div class="content"> <div class="card"> <div class="top"><a class="date" id="' +
+                            result.posts[i].hash +
+                            '">' +
+                            result.posts[i].date +
+                            '</a><a class="user" href="#' + result.posts[i].hash + '" target="_blank">' +
+                            result.posts[i].title +
+                            '</a></div><div class="bottom">' +
+                            result.posts[i].content +
+                            "</div></div></div></div>";
+                    }
+                    bio.html(result.meta.bio);
+                    userName.html(result.meta.user)
+                    userPhoto.attr('src', result.meta.photo);
+                    socialLink.attr('href', result.meta.link.value);
+                    socialLink.text(result.meta.link.title);
+                    displayResources.html(output);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
