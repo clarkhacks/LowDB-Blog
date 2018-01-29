@@ -1,5 +1,6 @@
 # Json Micro Blog
 A Json powered Micro Blog using jQuery.
+#### [Demo](https://gh.clarkhacks.com/Json-Micro-Blog/)
 
 ## Documentation
 
