@@ -1,76 +1,42 @@
-# Json Micro Blog
-A Json powered Micro Blog using jQuery.
-#### [Demo](https://gh.clarkhacks.com/Json-Micro-Blog/)
+LowDB Blog
+===========
 
-## Documentation
+# Setup
 
-```javascript
-  var displayResources = $("#post-wrapper"); // Where the posts will be loaded
-  var bio = $("#bio");                       // User's Bio location
-  var userName = $("#userName");             // Username location
-  var userPhoto = $("#userPhoto");           // Where the photo will be loaded
-  var socialLink = $("#link");               // Location on link anchor
-```
+1. Run `npm install`
+2. Set a secret in `.env`. Make it complicated like a hard password _(ex: 48zu-QdF5a-dS)_ with URL friendly characters.
+3. Run `node server.js`
 
-### Bio
+# API
 
-```json
-  "meta" : {
-    "bio" : "All About You Here",
-    ...
-  }
-```
-The Bio is location under the `meta` section in your Json File.
+The API is relatively simple to understand and use. It is based around post requests and your `.env` secret you set earlier. Examples are shown in jQuery.
 
-### Name
+## New Post
 
-```json
-  "meta" : {
-    ...
-    "user" : "ClarkHacks"
-  },
-```
+__End Point_ `/posts/new`
 
-Your Name is located under the `meta` section in your Json File.
+__Parameters__ `title`,`date`,`body`, and `token`.
 
-### Photo
+__Example__ `$.post("/posts/new", { title: "Title", date: "Month Day, body: "Lorem ipsum...", token: "TOKENHERE"});`
 
-```json
-  "meta" : {
-    ...
-    "photo" : "Photo Link Here"
-  }
-```
-The user photo link is located under the `meta` section in your Json File.
+All queries are required.
 
-### Link
+## Meta Data
 
-```json
-  "meta" : {
-    ...
-    "link" : {
-      "title" : "Text For Link",
-      "value" : "Url"
-    },
-    ...
-  }
-```
-Your social link is located under the `meta` section in your Json File.
+__End Point__ `/meta/:ID`
 
-### Posts
+__IDs__`user`,`bio`,`link`,`photo`, `photo`, and `title`.
 
-```json
-"posts" : {
-    "001" : {
-      "content" : "Lorem ipsum dolor blah blah blah...",
-      "date" : "January 25th 2018",
-      "hash" : "permalink-hash",
-      "title" : "Post Title"
-    }
-  }
-```
-* Posts are sorted by their unique identifers (`001` in our example).
-* Post `content` is the rendered text of each post.
-* The post `date` is the date of publication.
-* `Hash` is used for the post's permalink.
-* The post's title is under `title`.
+__Parameters__  `value`, `text`, and `token`.
+
+__Example__ `$.post("/meta/bio", { value: "Lorem ipsum...", token: "TOKENHERE"});`
+
+__Example 2__ `$.post("/meta/link", { text: "Google", value: "google.com", token: "TOKENHERE"});`
+
+All queries are required expres text. Text is used only for the `link` ID.
+
+## Public API
+
+The public API is a read only version of the LowDB json file.
+
+ __End Point__ `/api`
