@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LowDB Blog</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="A LowDB and jQuery Blog by ClarkHacks.">
+    <link href="https://cdn.rawgit.com/zachacole/Simple-Grid/0de58d47/simple-grid.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://clarkhacks.com/favicon.png">
+    <link href="/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="feed"></div>
+    <div class="container">
+        <div class="profile">
+            <div class="row">
+                <div class="col-3">
+                    <img class="user-image" src="https://goo.gl/6b4Jif" alt="profile image" id="userPhoto" />
+                </div>
+                <div class="col-9">
+                    <div class="name" id="userName">Loading...</div>
+                    <p class="about" id="bio">Loading...</p>
+                    <a class="button" href="#" id="socialLink">Loading...</a>
+                </div>
+            </div>
+        </div>
+        <div id="post-wrapper"></div>
+        <button id="#loadMore" onclick="loadMore();">Load More</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="blog.js"></script>
+</body>
+
+</html>

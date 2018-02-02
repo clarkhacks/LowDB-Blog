@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "bio": "I am a web developer, software engineer, and project manager currently living in Collinsville, Illinois.",
+    "link": {
+      "title": "Website",
+      "value": "https://clarkhacks.com"
+    },
+    "photo": "https://firebasestorage.googleapis.com/v0/b/clarkwtest.appspot.com/o/e82b82c810fdfcf6.png?alt=media&token=618c0236-5ff8-4e1e-a724-7df1999bd900",
+    "title": "Clark Hacks",
+    "user": "ClarkHacks"
+  },
+  "posts": [
+    {
+      "id": 1,
+      "content": "Lorem ipsum dolor blah blah blah...",
+      "date": "January 25th 2018",
+      "title": "Test Title"
+    },
+    {
+      "id": 2,
+      "content": "Some content with <code>html</code> <b>test bold</b>",
+      "date": "January 10th 2018",
+      "title": "Another"
+    },
+    {
+      "id": 3,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "date": "January 16th 2018",
+      "title": "Lorem Title"
+    },
+    {
+      "id": 4,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.",
+      "date": "January 20th 2018",
+      "title": "Exciting Title"
+    }
+  ]
+}

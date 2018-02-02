@@ -1,0 +1,27 @@
+{
+  "name": "lowdb-blog",
+  "version": "0.0.1",
+  "description": "A lowDB Blog with an API. All posts are loaded through jQuery on the client side.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "lowdb": "^1.0.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "lowdb",
+    "express",
+    "blog",
+    "api"
+  ]
+}

@@ -1,0 +1,125 @@
+#feed {
+  margin: 50px auto;
+  max-width: 400px;
+  width: auto;
+}
+
+.about {
+  background-color: #000;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+.button {
+  background-color: #000;
+  border-radius: 4px;
+  color: #fff;
+  margin-bottom: 3px;
+  margin-top: 2px;
+  padding: 8px;
+}
+
+button {
+  background-color: #fcfcfc;
+  border-radius: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  font-size: 1rem;
+  width: 10rem
+}
+
+.hidden {
+  display: none;
+}
+
+.name {
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  margin-bottom: -15px;
+}
+
+.post {
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+  color: #1a1c21;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.post .card {
+  overflow: visible;
+}
+
+.post .card .bottom {
+  margin-top: 15px;
+}
+
+.post .card .top {
+  min-height: 20px;
+}
+
+.post .card .top .date {
+  color: #8b99a0;
+  float: right;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.post .card .top .user {
+  color: #1a1c21;
+  font-weight: 700;
+}
+
+.post .content {
+  padding: 15px;
+}
+
+.post .media {
+  border: 0;
+  height: auto;
+  margin-top: 5px;
+  min-height: 200px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.profile {
+  background-attachment: fixed;
+  background-image: url(bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.user-image {
+  border-radius: 50%;
+}
+
+a {
+  color: #08c;
+  outline: 0;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #005580;
+}
+
+body {
+  font-family: "PT Sans";
+  font-size: 14px;
+  height: 100%;
+  line-height: 1.5;
+}
+
+html {
+  background: #333;
+}

@@ -1,11 +1,16 @@
 LowDB Blog
 ===========
 
+LowDB Blog is a LowDB (ya don't say?) and jQuery powered blog with a full private and public API. This repository is updated frequently.
+
+
 # Setup
 
 1. Run `npm install`
-2. Set a secret in `.env`. Make it complicated like a hard password _(ex: 48zu-QdF5a-dS)_ with URL friendly characters.
-3. Run `node server.js`
+2. Set a secret in `secret.example.json`. Make it complicated, like a hard password, _(ex: 48zu-QdF5a-dS)_ with URL friendly characters.
+3. Rename `secret.example.json` to "secret.json". (In production use environmental variables)
+4. Set Meta data and Posts via the API or `db.json` (In production store data in `.data/db.json`)
+5. Run `node server.js`
 
 # API
 
