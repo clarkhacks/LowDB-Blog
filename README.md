@@ -39,4 +39,4 @@ All queries are required expres text. Text is used only for the `link` ID.
 
 The public API is a read only version of the LowDB json file.
 
- __End Point__ `/api`
+ __End Point__ `/api/v1`
